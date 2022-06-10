@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% block body %}
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0">Gestion Citas</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Citas</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+  <!-- /.content-header -->
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <!-- Small boxes (Stat box) -->
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-xl">
+        Agregar Citas
+      </button>
+      <div class="card-body">
+        <h5 class="card-title">Citas</h5>
+
+
+
+        <p class="card-text">
+          lista de citas
+        </p>
+        <p class="card-text">
+          lista de citas
+        </p>
+        <p class="card-text">
+          lista de citas
+        </p>
+        <p class="card-text">
+          lista de citas
+        </p>
+
+
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+      <!-- /.row (main row) -->
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- /.modal -->
+  <div class="modal fade" id="modal-xl">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Agregar Citas</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card-body">
+          <div class="card-body">
+            <div class="form-group row">
+              <div class=" col-md-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="text-start">Datos de la cita</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class=" row">
+                      <div class="form-group col-6 col-lg-5 col-md-4">
+                        <form id="form-atencion" action="">
+                          <div class="form-group">
+                            <label for="numero_historia">DNI CLiente</label>
+                            <div class="input-group input-group-sm ">
+                              <input id="cliente_id" type="text" class="form-control" name="dni_cliente">
+                              <span class="input-group-append">
+                                <button id="btn-buscar-mascota" type="button" class="btn btn-success btn-flat">
+                                  <svg class="svg-inline--fa fa-search fa-w-16 fa-fw select-all" aria-hidden="true"
+                                    focusable="false" data-prefix="fas" data-icon="search" role="img"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                      d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z">
+                                    </path>
+                                  </svg>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+
+                      <div class=" form-group col-6 col-lg-6 col-md-4">
+                        <label for="nombre_mascota">Mascota</label>
+                        <select class="form-control">
+                          <option>Mascota1</option>
+                          <option>Mascota2</option>
+                          <option>Mascota3</option>
+                        </select>
+                      </div>
+
+
+                      <div class="form-group col-12 col-lg-12 col-md-12 ">
+                        <label for="txtCliente">Cliente</label>
+                        <input id="txtCliente" name="txtCliente" type="text" class="form-control" disabled="">
+                      </div>
+                      <div class="col-sm-6 col-md-6">
+                        <label for="txtCliente">Fecha Cita</label>
+                        <input type="date" name="txt_fecha_cita" id="txt_fecha_cita"
+                        class="form-control form-control-sm mayus">
+                      </div>
+                      <div class="table-responsive">                    
+                        <div id="dataTable-servicio_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 392.8px; padding-right: 0px;"><table class="table dataTable no-footer" width="100%" style="margin-left: 0px; width: 392.8px;"><thead>
+                                <tr><th class="sorting sorting_asc" tabindex="0" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 16.6875px;" aria-sort="ascending" aria-label="#: activate to sort column descending">#</th><th class="sorting" tabindex="0" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 102.213px;" aria-label="descripcion: activate to sort column ascending">descripcion</th><th class="sorting" tabindex="0" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 58.4625px;" aria-label="Precio: activate to sort column ascending">Precio</th><th class="sorting" tabindex="0" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 63.4375px;" aria-label="Añadir: activate to sort column ascending">Añadir</th></tr>
+                            </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 200px; width: 100%;"><table class="table dataTable no-footer" id="dataTable-servicio" width="100%" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting sorting_asc" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 16.6875px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending" aria-label="#: activate to sort column descending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">#</div></th><th class="sorting" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 102.213px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="descripcion: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">descripcion</div></th><th class="sorting" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 58.4625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Precio: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Precio</div></th><th class="sorting" aria-controls="dataTable-servicio" rowspan="1" colspan="1" style="width: 63.4375px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-label="Añadir: activate to sort column ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Añadir</div></th></tr>
+                            </thead>
+                            
+                            <tbody>
+
+                            <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">Busque una mascota para listar sus servicios disponibles</td></tr></tbody>
+                        </table></div></div></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class=" col-md-6 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class=" text-start">Datos del servicio</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="table-responsive">
+                        <table class="table col-md-10" id="servicios-añadidos" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Descripción</th>
+                                    <th>Precio</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                    <div>
+                      <p class="text-firts">Costo de cita</p>
+                      <select class="form-select" name="tipo-pago" id="tipo-pago">
+                        <option value="0">Seleccione</option>
+                        <option value="1">Con costo</option>
+                        <option value="2">Sin costo</option>
+                        <option value="3">Tratamiento</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="text-start">Total: </h3>
+                      </div>
+                      <div class="col-6">
+                        <h3 class="text-end" id="monto-total">S/. 00.00</h3>
+                      </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                      <button type="button" id="btn-generar-atencion" class="btn btn-primary">Guardar</button>
+
+                      
+
+                    </div>
+                  </div>
+                  <div class="col-md-12 col-8">
+                    <div class="form-group">
+                      <label>Descripción</label>
+                      <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+  </div>
+  
+{% endblock body %}
+  
+
+{% block js %}
+  
+{% endblock js %}
+  

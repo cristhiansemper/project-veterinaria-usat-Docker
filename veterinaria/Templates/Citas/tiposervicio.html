@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Tipo Servicio</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Tipo Servicio</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    
+    <button type="button" id="btn-modal-tiposervicio" class="btn btn-success" data-toggle="modal" data-target="#modal-xl">
+      Agregar +
+    </button>
+
+    <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table id="table-tiposervicio" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>Id</th>
+                            <th>Descripcion</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                            
+                          </tbody>
+                        </table>
+                  </div>
+                
+              </div>
+            </div>
+      </div>
+      <!-- /.col -->
+  </div>
+
+
+    <div class="modal fade" id="modal-xl" >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Tipo de Servicio</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card-body">
+              <form id="form-tiposervicio"  action="" method="POST">
+                <div class="mb-3 row justify-content-center">
+                    <label for="descripcion_id" class="col-sm-2 col-form-label">Descripción:</label>
+                    <div class="col-sm-2">
+                        {{form.descripcion}}
+                    </div>
+                    <label for="estado_id" class="col-sm-1 col-form-label">Estado:</label>
+                    <div class="col-sm-1">
+                        {{form.estado}}
+                    </div>
+                </div>
+            </form>
+              
+            </div>
+          </div>
+          <div class="modal-footer justify-content-end">
+            <button type="button" id="modificar-tiposervicio"class="btn btn-default">Modificar</button>
+            <button type="button" id="registrar-tiposervicio" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+</section>
+  <!-- /.content -->
+
+{% endblock body %}
+
+
+{% block js %}
+    <script src="{% static 'js/citas/tiposervicio.js' %}" ></script>
+{% endblock js %}
+  

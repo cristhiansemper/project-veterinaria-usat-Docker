@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0">Mascota</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active">Mascota</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+    <!-- Small boxes (Stat box) -->
+    <button type="button" id="btn-modal-mascota" class="btn btn-success" data-toggle="modal" data-target="#modal-xl">
+      Agregar +
+    </button>
+
+    <div class="row">
+      <div class="col-12">
+          <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">DataTable with default features</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table id="table-mascota" class="table table-bordered table-striped">
+                          <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>F. Nac</th>
+                            <th>Sexo</th>
+                            <th>Cliente</th>
+                            <th>Raza</th>
+                            <th>Acciones</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+
+                          </tbody>
+                          
+                        </table>
+                  </div>
+                
+              </div>
+            </div>
+      </div>
+      <!-- /.col -->
+  </div>
+
+    <div class="modal fade" id="modal-xl">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Mascota</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card-body">
+              <form id="form-mascota" action="">
+                <div class="row">
+                  <div class="cold-md-5 col-lg-5">
+                    <div class="form-group">
+                      <label for="id_cliente" class="control-label">DNI CLIENTE</label>
+                      <div class="input-group mb-3">
+                        <input type="text" id="txtbC" class="form-control rounded-0">
+                        <span class="input-group-append">
+                        <button type="button" id="btnBuscarCliente"class="btn btn-info btn-flat"><i class="nav-icon fas fa-search"></i></button>
+                        </span>
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <div class="cold-md-5 col-lg-5">
+                    <div class="form-group">
+                      <label for="txt_cliente_id" class="control-label">NOMBRE</label>
+                      <div class="input-group mb-3">
+                        <input type="text" id="nombrecliente" class="form-control" placeholder="Nombre del cliente" disabled="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="cold-md-4 col-lg-4">
+                    <div class="form-group">
+                      <label for="cbbo_tipomascota_id" class="control-label">TIPO</label>
+                      <select class="form-control" aria-label="Default select example" name="id_animal"id="id_animal">
+                        <option value="#">Seleccione</option>
+                        {% for a in animal %}
+                            <option value="{{a.id_tipo_mascota}}">{{a.descripcion}}</option>  
+                        {% endfor %}
+                      </select> 
+                    </div>
+                  </div>
+                  <div class="cold-md-4 col-lg-4">
+                    <div class="form-group">
+                      <label for="cbbo_tiporaza_id" class="control-label">RAZA</label>
+                      <select class="form-control" id="id_id_raza" name="id_raza">
+                        
+                        {% for value in form.id_raza %}
+                          {{value}}
+                        {% endfor %}
+                          
+                      </select>
+                    </div>
+                  </div>
+                  <div class="cold-md-4 col-lg-4">
+                    <div class="form-group">
+                      <label for="txt_nombre_mascota" class="control-label">NOMBRE</label>
+                      {{form.nombre}}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="cold-md-4 col-lg-4">
+                    <label for="txt_fechanacimiento_mascota" class="control-label">FECHA NACIMIENTO: </label>
+                    {{form.fecha_nacimiento}}
+                  </div>
+                  <div class="cold-md-4 col-lg-4">
+                    <div class="form-group">
+                      <label for="cbo_sexo_mascota" class="control-label">SEXO</label>
+                      <select class="form-control " id="id_sexo" name="sexo">
+                        
+                        {% for value in form.sexo %}
+                          {{value}}
+                        {% endfor %}
+                      </select>
+                    </div>
+                  </div>
+                  <div class="cold-md-4 col-lg-4">
+                    <label for="txt_fecharegistro_mascota" class="control-label">FECHA REGISTRO: </label>
+                    {{form.fecha_registro}}
+                  </div>
+                  <div class="cold-md-12 col-lg-12">
+                    <label for="txt_estado" class="control-label">Estado</label>
+                    {{form.estado}}
+                  </div>
+                </div>
+              </form>
+              
+            </div>
+          </div>
+          <div class="modal-footer justify-content-end">
+            <button type="button" id="modificar-mascota" class="btn btn-default" >Modificar</button>
+            <button type="button" id="registrar-mascota" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.row (main row) -->
+  </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+  
+{% endblock body %}
+
+
+{% block js %}
+  <script src="{% static 'js/citas/mascota.js' %}"></script>
+{% endblock js %}
+  
+
+  
