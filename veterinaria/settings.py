@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-gj994+_em&-oa&az)4$zw(ur&phyun0(&%xtamsoe)h*h)qf=#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -81,11 +81,11 @@ WSGI_APPLICATION = 'veterinaria.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Cheril',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'ydaleu',
-        'HOST':'localhost',
-        'DATABASE_PORT':'5432',
+        'PASSWORD': 'postgres',
+        'HOST':'db',
+        'DATABASE_PORT':'5440',
     }
 }
 

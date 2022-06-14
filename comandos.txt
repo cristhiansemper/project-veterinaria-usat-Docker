@@ -1,0 +1,18 @@
+1° Hace las migraciones de los modelos
+# docker-compose run web python manage.py makemigrations
+
+2° Crea el esquema bd en postgres
+# docker-compose run web python manage.py migrate
+
+3° Crea super usuario en DJANGO
+# docker-compose run web python manage.py createsuperuser
+	admin
+	admin
+	admin
+	. . .
+
+4° Corre el servidor web
+# docker-compose up -d
+
+5° Ver en el navegador
+http://localhost:8000
